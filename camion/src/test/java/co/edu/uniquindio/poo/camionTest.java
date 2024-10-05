@@ -1,8 +1,6 @@
 package co.edu.uniquindio.poo;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertIterableEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.logging.Logger;
 
@@ -28,38 +26,35 @@ public class camionTest {
 
         // Verifica que se lanza una excepción al agregar una canasta nula
         assertThrows(IllegalArgumentException.class, () -> {
-            camion.crearCanasta(null);
+            camion.crearCanasta(null);  // Asegúrate de que este método lance la excepción correcta
         });
 
         LOG.info("Finalizando testAgregarCanastaNula");
     }
 
     @Test
-    public void crearCanasta() {
-        LOG.info("Iniciado crearCanasta");
+    public void testCrearCanasta() {
+        LOG.info("Iniciado testCrearCanasta");
 
         Canasta canasta = new Canasta("C001", 100, TipoCanasta.CANASTACARNES);
-        assertEquals("C001", canasta.getCodigo());
+        assertEquals("C001", canasta.getCodigo(), "El código de la canasta debería ser C001");
 
-        LOG.info("Finalizando crearCanasta");
+        LOG.info("Finalizando testCrearCanasta");
     }
 
     @Test
-    public void crearCanastaLista() {
-        LOG.info("Iniciado crearCanastaLista");
+    public void testCrearCanastaLista() {
+        LOG.info("Iniciado testCrearCanastaLista");
 
-        Camion camion = new Camion("wer 453");
+        Camion camion = new Camion("WER 453");
         Canasta canasta = new Canasta("C001", 100, TipoCanasta.CANASTACARNES);
 
         // Agregar la canasta al camión
-        camion.crearCanasta(null);
-        assertThrows(Throwable.class, camion.crearCanasta(null));
-
+        camion.crearCanasta(canasta);  // Cambiado a crearCanasta(canasta)
+        
         // Verifica que el número de canastas en el camión es 1
-        assertEquals(10, camion.getListaCanastas().size());
+        assertEquals(1, camion.getListaCanastas().size(), "El número de canastas en el camión debería ser 1");
 
-        assertIterableEquals(null, null);
-
-        LOG.info("Finalizando crearCanastaLista");
+        LOG.info("Finalizando testCrearCanastaLista");
     }
 }
