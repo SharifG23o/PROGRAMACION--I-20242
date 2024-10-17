@@ -2,9 +2,12 @@ package co.edu.uniquindio.poo.model;
 
 public class Canasta {
 
-    private String codigo;
+    private final String codigo;
     private int peso;
-    private TipoCanasta tipoCanasta;  
+    private TipoCanasta tipoCanasta; 
+    
+    
+
     public Canasta(String codigo, int peso, TipoCanasta tipoCanasta){
         this.codigo = codigo;
         this.peso = peso;
@@ -16,7 +19,7 @@ public class Canasta {
     }
 
     public void setCodigo(String codigo) {
-        this.codigo = codigo;
+        //ethis.codigo = codigo;
     }
 
     public int getPeso() {
