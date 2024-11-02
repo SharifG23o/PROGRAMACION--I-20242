@@ -33,10 +33,8 @@ public class EmpleadoPorHora extends Empleado {
         return "EmpleadoPorHora [horasTrabajadas=" + horasTrabajadas + ", salarioPorHora=" + salarioPorHora + "]";
     }
 
-    @Override
     public double calcularSalario() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularSalario'");
+        return horasTrabajadas * salarioPorHora;
     }
 
     

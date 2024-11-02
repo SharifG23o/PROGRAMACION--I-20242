@@ -2,20 +2,20 @@ package co.edu.uniquindio.poo.model;
 
 public class EmpleadoTiempoCompleto extends Empleado {
 
-    private long salarioMensual;
+    private double salarioMensual;
 
-    public EmpleadoTiempoCompleto(String nombre, String identificacion, long salarioMensual){
+    public EmpleadoTiempoCompleto(String nombre, String identificacion, double salarioMensual){
 
         super(nombre, identificacion);
         this.salarioMensual=salarioMensual;
 
     }
 
-    public long getSalarioMensual() {
+    public double getSalarioMensual() {
         return salarioMensual;
     }
 
-    public void setSalarioMensual(long salarioMensual) {
+    public void setSalarioMensual(double salarioMensual) {
         this.salarioMensual = salarioMensual;
     }
 
@@ -24,10 +24,8 @@ public class EmpleadoTiempoCompleto extends Empleado {
         return "EmpleadoTiempoCompleto [salarioMensual=" + salarioMensual + "]";
     }
 
-    @Override
     public double calcularSalario() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularSalario'");
+        return salarioMensual;
     }
 
    

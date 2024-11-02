@@ -43,10 +43,8 @@ public class EmpleadoFreelance extends Empleado{
     }
 
 
-    @Override
     public double calcularSalario() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularSalario'");
+        return proyectosCompletados * pagoPorProyecto;
     }
 
     
