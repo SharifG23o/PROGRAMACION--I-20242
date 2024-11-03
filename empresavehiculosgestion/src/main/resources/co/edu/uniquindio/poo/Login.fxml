@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="co.edu.uniquindio.poo.controller.LoginController">
+  <children>
+    <Label layoutX="125.0" layoutY="6.0" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Iniciar Sesión" textFill="#0029ff" />
+    <TextField fx:id="usernameField" layoutX="114.0" layoutY="79.0" promptText="Correo" />
+    <Label layoutX="121.0" layoutY="46.0" text="Correo" />
+    <PasswordField fx:id="passwordField" layoutX="114.0" layoutY="159.0" promptText="Contraseña" />
+    <Label layoutX="114.0" layoutY="130.0" text="Contraseña" />
+    <Button fx:id="loginButton" layoutX="144.0" layoutY="244.0" onAction="#handleLogin" text="Iniciar Sesión" />
+  </children>
+</AnchorPane>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<ScrollPane xmlns:fx="http://javafx.com/fxml" fx:controller="co.edu.uniquindio.poo.controller.MainController" prefWidth="600" prefHeight="800">
+    <content>
+        <AnchorPane prefWidth="600" prefHeight="1000">
+            <children>
+                <Label text="Gestión de Clientes" style="-fx-font-size: 24px; -fx-font-weight: bold;" layoutX="10" layoutY="10"/>
+
+                <Button text="Agregar Cliente" onAction="#handleAgregarCliente" layoutX="10" layoutY="50"/>
+                <Button text="Buscar Cliente" onAction="#handleBuscarCliente" layoutX="150" layoutY="50"/>
+                <Button text="Actualizar Cliente" onAction="#handleActualizarCliente" layoutX="300" layoutY="50"/>
+                <Button text="Eliminar Cliente" onAction="#handleEliminarCliente" layoutX="450" layoutY="50"/>
+
+                <TableView fx:id="tablaClientes" layoutX="10" layoutY="100" prefWidth="580" prefHeight="150">
+                    <columns>
+                        <TableColumn text="Nombre" fx:id="colNombre" prefWidth="150"/>
+                        <TableColumn text="Identificación" fx:id="colIdentificacion" prefWidth="150"/>
+                        <TableColumn text="Celular" fx:id="colCelular" prefWidth="150"/>
+                        <TableColumn text="Email" fx:id="colEmail" prefWidth="130"/>
+                        <TableColumn text="Dirección" fx:id="colDireccion" prefWidth="150"/>
+                    </columns>
+                </TableView>
+
+                <Button text="Limpiar Campos" onAction="#handleLimpiarCampos" layoutX="10" layoutY="270"/>
+
+                <Separator layoutX="0" layoutY="300" prefWidth="600"/>
+
+                <Label text="Gestión de Vehículos" style="-fx-font-size: 24px; -fx-font-weight: bold;" layoutX="10" layoutY="320"/>
+
+                <Button text="Agregar Vehículo" onAction="#handleAgregarVehiculo" layoutX="10" layoutY="360"/>
+                <Button text="Buscar Vehículo" onAction="#handleBuscarVehiculo" layoutX="150" layoutY="360"/>
+                <Button text="Actualizar Vehículo" onAction="#handleActualizarVehiculo" layoutX="300" layoutY="360"/>
+                <Button text="Eliminar Vehículo" onAction="#handleEliminarVehiculo" layoutX="450" layoutY="360"/>
+
+                <TableView fx:id="tablaVehiculos" layoutX="10" layoutY="410" prefWidth="580" prefHeight="150">
+                    <columns>
+                        <TableColumn text="Matrícula" fx:id="colMatricula" prefWidth="150"/>
+                        <TableColumn text="Marca" fx:id="colMarca" prefWidth="150"/>
+                        <TableColumn text="Modelo" fx:id="colModelo" prefWidth="150"/>
+                        <TableColumn text="Año" fx:id="colAnio" prefWidth="100"/>
+                        <TableColumn text="Tipo" fx:id="colTipo" prefWidth="100"/>
+                        <TableColumn text="Número de Puertas" fx:id="colNumeroPuertas" prefWidth="100"/>
+                        <TableColumn text="Capacidad de Carga" fx:id="colCapacidadCarga" prefWidth="150"/>
+                        <TableColumn text="Tipo de Caja" fx:id="colTipoCaja" prefWidth="100"/>
+                    </columns>
+                </TableView>
+
+                <Label text="Gestión de Reservas" style="-fx-font-size: 24px; -fx-font-weight: bold;" layoutX="10" layoutY="580"/>
+
+                <Button text="Agregar Reserva" onAction="#handleAgregarReserva" layoutX="10" layoutY="620"/>
+                <Button text="Buscar Reserva" onAction="#handleBuscarReserva" layoutX="150" layoutY="620"/>
+                <Button text="Actualizar Reserva" onAction="#handleActualizarReserva" layoutX="300" layoutY="620"/>
+                <Button text="Eliminar Reserva" onAction="#handleEliminarReserva" layoutX="450" layoutY="620"/>
+
+                <TableView fx:id="tablaReservas" layoutX="10" layoutY="670" prefWidth="580" prefHeight="150">
+                    <columns>
+                        <TableColumn text="ID Reserva" fx:id="colIdReserva" prefWidth="150"/>
+                        <TableColumn text="Vehículo" fx:id="colVehiculo" prefWidth="150"/>
+                        <TableColumn text="Cliente" fx:id="colCliente" prefWidth="150"/>
+                        <TableColumn text="Tarifa Base" fx:id="colTarifaBase" prefWidth="100"/>
+                        <TableColumn text="Tarifa Adicional" fx:id="colTarifaAdicional" prefWidth="100"/>
+                        <TableColumn text="Número de Días" fx:id="colNumeroDias" prefWidth="100"/>
+                        <TableColumn text="Costo Total" fx:id="colCostoTotal" prefWidth="100"/>
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+    </content>
+</ScrollPane>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="co.edu.uniquindio.poo.controller.AgregarReservaController">
+    <children>
+        <Label text="Agregar Reserva" style="-fx-font-size: 24px; -fx-font-weight: bold;" layoutX="10" layoutY="10"/>
+        
+        <Label text="Vehículo" layoutX="10" layoutY="50"/>
+        <ComboBox fx:id="vehiculoComboBox" layoutX="100" layoutY="50"/>
+        
+        <Label text="Cliente" layoutX="10" layoutY="90"/>
+        <ComboBox fx:id="clienteComboBox" layoutX="100" layoutY="90"/>
+        
+        <Label text="Tarifa Base" layoutX="10" layoutY="130"/>
+        <TextField fx:id="tarifaBaseField" layoutX="100" layoutY="130" promptText="Tarifa Base"/>
+        
+        <Label text="Tarifa Adicional" layoutX="10" layoutY="170"/>
+        <TextField fx:id="tarifaAdicionalField" layoutX="100" layoutY="170" promptText="Tarifa Adicional"/>
+        
+        <Label text="Número de Días" layoutX="10" layoutY="210"/>
+        <TextField fx:id="numeroDiasField" layoutX="100" layoutY="210" promptText="Número de Días"/>
+        
+        <Label text="Costo Total" layoutX="10" layoutY="250"/>
+        <TextField fx:id="costoTotalField" layoutX="100" layoutY="250" promptText="Costo Total"/>
+        
+        <Button text="Agregar" onAction="#handleAgregar" layoutX="100" layoutY="300"/>
+        <Button text="Cancelar" onAction="#handleCancelar" layoutX="200" layoutY="300"/>
+    </children>
+</AnchorPane>
