@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane style="-fx-background-color: #f0f4f8;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="co.edu.uniquindio.poo.controller.InterfaceController">
+  <children>
+    <!-- Título de la interfaz -->
+    <Label layoutX="20.0" layoutY="20.0" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: #4e5b6e;" text="Gestión de Vehículos, Clientes y Reservas" />
+    <!-- TabPane para las secciones de Gestión -->
+    <TabPane layoutX="20.0" layoutY="60.0" prefHeight="750.0" prefWidth="650.0" style="-fx-background-color: white; -fx-border-color: #ddd;">
+      <!-- Pestaña de Gestión de Clientes -->
+      <tabs>
+        <Tab style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #4e5b6e;" text="Gestión de Clientes">
+          <AnchorPane prefHeight="354.0" prefWidth="648.0">
+            <children>
+              <TextField fx:id="nombreField" layoutX="20.0" layoutY="30.0" promptText="Nombre" style="-fx-background-color: #e0f2f1; -fx-border-radius: 8px; -fx-padding: 10;" />
+              <TextField fx:id="identificacionField" layoutX="20.0" layoutY="80.0" promptText="Identificación" style="-fx-background-color: #e0f2f1; -fx-border-radius: 8px; -fx-padding: 10;" />
+              <TextField fx:id="celularField" layoutX="20.0" layoutY="130.0" promptText="Celular" style="-fx-background-color: #e0f2f1; -fx-border-radius: 8px; -fx-padding: 10;" />
+              <TextField fx:id="correoField" layoutX="20.0" layoutY="180.0" promptText="Correo" style="-fx-background-color: #e0f2f1; -fx-border-radius: 8px; -fx-padding: 10;" />
+              <TextField fx:id="direccionField" layoutX="20.0" layoutY="230.0" promptText="Dirección" style="-fx-background-color: #e0f2f1; -fx-border-radius: 8px; -fx-padding: 10;" />
+              <Button layoutX="20.0" layoutY="284.0" onAction="#agregarCliente" style="-fx-background-color: #4e5b6e; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;" text="Agregar Cliente" />
+              <Button layoutX="160.0" layoutY="284.0" onAction="#buscarCliente" style="-fx-background-color: #4e5b6e; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;" text="Buscar Cliente" />
+              <Button layoutX="296.0" layoutY="284.0" onAction="#eliminarCliente" prefWidth="138.0" style="-fx-background-color: #4e5b6e; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;" text="Eliminar Cliente" />
+              <Button layoutX="447.0" layoutY="284.0" onAction="#actualizarCliente" style="-fx-background-color: #4e5b6e; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;" text="Actualizar Cliente" />
+              <TableView fx:id="clientesTable" layoutX="250.0" layoutY="30.0" prefHeight="230.0" prefWidth="380.0" style="-fx-background-color: #fafafa; -fx-border-radius: 8px;">
+                <columns>
+                  <TableColumn text="Nombre" fx:id="nombreColumn" />
+                  <TableColumn text="Identificación" fx:id="identificacionColumn" />
+                  <TableColumn text="Celular" fx:id="celularColumn" />
+                  <TableColumn text="Correo" fx:id="correoColumn" />
+                  <TableColumn text="Dirección" fx:id="direccionColumn" />
+                </columns>
+              </TableView>
+            </children>
+          </AnchorPane>
+        </Tab>
+        <!-- Pestaña de Gestión de Vehículos -->
+        <Tab style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #4e5b6e;" text="Gestión de Vehículos">
+          <AnchorPane>
+            <children>
+              <TextField fx:id="modeloField" layoutX="20.0" layoutY="30.0" promptText="Modelo" style="-fx-background-color: #e0f2f1; -fx-border-radius: 8px; -fx-padding: 10;" />
+              <TextField fx:id="marcaField" layoutX="20.0" layoutY="80.0" promptText="Marca" style="-fx-background-color: #e0f2f1; -fx-border-radius: 8px; -fx-padding: 10;" />
+              <TextField fx:id="anioField" layoutX="20.0" layoutY="130.0" promptText="Año" style="-fx-background-color: #e0f2f1; -fx-border-radius: 8px; -fx-padding: 10;" />
+              <!-- Selector de Tipo de Vehículo -->
+              <Label layoutX="20.0" layoutY="301.0" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #4e5b6e;" text="Tipo de Vehículo:" />
+              <ComboBox fx:id="tipoVehiculoCombo" layoutX="20.0" layoutY="331.0" prefWidth="170.0" promptText="Seleccionar tipo" style="-fx-background-color: #e0f2f1; -fx-border-radius: 8px; -fx-padding: 10;">
+                <items>
+                  <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Auto" />
+                    <String fx:value="Moto" />
+                    <String fx:value="Camioneta" />
+                  </FXCollections>
+                </items>
+              </ComboBox>
+              <Button layoutX="20.0" layoutY="247.0" onAction="#agregarVehiculo" style="-fx-background-color: #4e5b6e; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;" text="Agregar Vehículo" />
+              <Button layoutX="181.0" layoutY="247.0" onAction="#buscarVehiculo" style="-fx-background-color: #4e5b6e; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;" text="Buscar Vehículo" />
+              <Button layoutX="325.0" layoutY="247.0" onAction="#eliminarVehiculo" style="-fx-background-color: #4e5b6e; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;" text="Eliminar Vehículo" />
+              <Button layoutX="476.0" layoutY="247.0" onAction="#actualizarVehiculo" style="-fx-background-color: #4e5b6e; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;" text="Actualizar Vehículo" />
+              <TableView fx:id="vehiculosTable" layoutX="250.0" layoutY="30.0" prefHeight="204.0" prefWidth="380.0" style="-fx-background-color: #fafafa; -fx-border-radius: 8px;">
+                <columns>
+                  <TableColumn text="Modelo" fx:id="modeloColumn" />
+                  <TableColumn text="Marca" fx:id="marcaColumn" />
+                  <TableColumn text="Año" fx:id="anioColumn" />
+                  <TableColumn text="Tipo" fx:id="tipoColumn" />
+                </columns>
+              </TableView>
+            </children>
+          </AnchorPane>
+        </Tab>
+        <!-- Pestaña de Gestión de Préstamos -->
+        <Tab style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #4e5b6e;" text="Gestión de Reservas">
+          <AnchorPane>
+            <children>
+              <TextField fx:id="clienteIdField" layoutX="20.0" layoutY="30.0" promptText="ID Cliente" style="-fx-background-color: #e0f2f1; -fx-border-radius: 8px; -fx-padding: 10;" />
+              <TextField fx:id="vehiculoIdField" layoutX="20.0" layoutY="80.0" promptText="ID Vehículo" style="-fx-background-color: #e0f2f1; -fx-border-radius: 8px; -fx-padding: 10;" />
+              <TextField fx:id="fechaPrestamoField" layoutX="20.0" layoutY="130.0" promptText="Fecha de Préstamo" style="-fx-background-color: #e0f2f1; -fx-border-radius: 8px; -fx-padding: 10;" />
+              <TextField fx:id="fechaDevolucionField" layoutX="20.0" layoutY="180.0" promptText="Fecha de Devolución" style="-fx-background-color: #e0f2f1; -fx-border-radius: 8px; -fx-padding: 10;" />
+              <Button layoutX="20.0" layoutY="269.0" onAction="#agregarPrestamo" style="-fx-background-color: #4e5b6e; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;" text="Agregar Préstamo" />
+              <Button layoutX="179.0" layoutY="269.0" onAction="#buscarPrestamo" style="-fx-background-color: #4e5b6e; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;" text="Buscar Préstamo" />
+              <Button layoutX="324.0" layoutY="269.0" onAction="#eliminarPrestamo" style="-fx-background-color: #4e5b6e; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;" text="Eliminar Préstamo" />
+              <Button layoutX="488.0" layoutY="269.0" onAction="#actualizarPrestamo" style="-fx-background-color: #4e5b6e; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;" text="Actualizar " />
+              <TableView fx:id="prestamosTable" layoutX="250.0" layoutY="30.0" prefHeight="230.0" prefWidth="380.0" style="-fx-background-color: #fafafa; -fx-border-radius: 8px;">
+                <columns>
+                  <TableColumn text="ID Cliente" fx:id="clienteIdColumn" />
+                  <TableColumn text="ID Vehículo" fx:id="vehiculoIdColumn" />
+                  <TableColumn text="Fecha de Préstamo" fx:id="fechaPrestamoColumn" />
+                  <TableColumn text="Fecha de Devolución" fx:id="fechaDevolucionColumn" />
+                </columns>
+              </TableView>
+            </children>
+          </AnchorPane>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</AnchorPane>

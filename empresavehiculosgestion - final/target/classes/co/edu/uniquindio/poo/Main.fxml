@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<TabPane fx:id="tabPane" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="co.edu.uniquindio.poo.controller.MainController">
+    <tabs>
+        <!-- Clientes Tab -->
+        <Tab text="Clientes">
+            <AnchorPane>
+                <VBox spacing="15" alignment="TOP_CENTER" padding="20">
+                    <Label text="Gestión de Clientes" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <GridPane hgap="15" vgap="10" alignment="CENTER">
+                        <Label text="Nombre:"/>
+                        <TextField fx:id="nombreCliente" prefWidth="200"/>
+                        <Label text="Cédula:"/>
+                        <TextField fx:id="cedulaCliente" prefWidth="200"/>
+                    </GridPane>
+                    <Button text="Limpiar" onAction="#limpiarCliente" maxWidth="150" alignment="CENTER"/>
+                    <TableView fx:id="tablaClientes" prefWidth="700">
+                        <columns>
+                            <TableColumn text="Nombre" prefWidth="200"/>
+                            <TableColumn text="Cédula" prefWidth="200"/>
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10" alignment="CENTER">
+                        <Button text="Agregar" onAction="#agregarCliente"/>
+                        <Button text="Modificar" onAction="#modificarCliente"/>
+                        <Button text="Eliminar" onAction="#eliminarCliente"/>
+                    </HBox>
+                </VBox>
+            </AnchorPane>
+        </Tab>
+
+        <!-- Vehículos Tab -->
+        <Tab text="Vehículos">
+            <AnchorPane>
+                <VBox spacing="15" alignment="TOP_CENTER" padding="20">
+                    <Label text="Gestión de Vehículos" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <GridPane hgap="15" vgap="10" alignment="CENTER">
+                        <Label text="Matrícula:"/>
+                        <TextField fx:id="matriculaVehiculo" prefWidth="200"/>
+                        <Label text="Marca:"/>
+                        <TextField fx:id="marcaVehiculo" prefWidth="200"/>
+                        <Label text="Modelo:"/>
+                        <TextField fx:id="modeloVehiculo" prefWidth="200"/>
+                        <Label text="Año de Fabricación:"/>
+                        <TextField fx:id="anioFabricacionVehiculo" prefWidth="200"/>
+                        <Label text="Tarifa Base:"/>
+                        <TextField fx:id="tarifaBaseVehiculo" prefWidth="200"/>
+                    </GridPane>
+                    <Button text="Limpiar" onAction="#limpiarVehiculo" maxWidth="150" alignment="CENTER"/>
+                    <TableView fx:id="tablaVehiculos" prefWidth="700">
+                        <columns>
+                            <TableColumn text="Matrícula" prefWidth="150"/>
+                            <TableColumn text="Marca" prefWidth="150"/>
+                            <TableColumn text="Modelo" prefWidth="150"/>
+                            <TableColumn text="Año" prefWidth="100"/>
+                            <TableColumn text="Tarifa Base" prefWidth="150"/>
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10" alignment="CENTER">
+                        <Button text="Agregar" onAction="#agregarVehiculo"/>
+                        <Button text="Modificar" onAction="#modificarVehiculo"/>
+                        <Button text="Eliminar" onAction="#eliminarVehiculo"/>
+                    </HBox>
+                </VBox>
+            </AnchorPane>
+        </Tab>
+
+        <!-- Reservas Tab -->
+        <Tab text="Reservas">
+            <AnchorPane>
+                <VBox spacing="15" alignment="TOP_CENTER" padding="20">
+                    <Label text="Gestión de Reservas" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <GridPane hgap="15" vgap="10" alignment="CENTER">
+                        <Label text="Código:"/>
+                        <TextField fx:id="codigoReserva" prefWidth="200"/>
+                        <Label text="Número de Días:"/>
+                        <TextField fx:id="numeroDiasReserva" prefWidth="200"/>
+                        <Label text="Cédula Cliente:"/>
+                        <TextField fx:id="cedulaReservaCliente" prefWidth="200"/>
+                        <Label text="Matrícula Vehículo:"/>
+                        <TextField fx:id="matriculaReservaVehiculo" prefWidth="200"/>
+                    </GridPane>
+                    <Button text="Limpiar" onAction="#limpiarReserva" maxWidth="150" alignment="CENTER"/>
+                    <TableView fx:id="tablaReservas" prefWidth="700">
+                        <columns>
+                            <TableColumn text="Código" prefWidth="100"/>
+                            <TableColumn text="Días" prefWidth="100"/>
+                            <TableColumn text="Cliente (Cédula)" prefWidth="200"/>
+                            <TableColumn text="Vehículo (Matrícula)" prefWidth="200"/>
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10" alignment="CENTER">
+                        <Button text="Agregar" onAction="#agregarReserva"/>
+                        <Button text="Modificar" onAction="#modificarReserva"/>
+                        <Button text="Eliminar" onAction="#eliminarReserva"/>
+                    </HBox>
+                </VBox>
+            </AnchorPane>
+        </Tab>
+    </tabs>
+</TabPane>
