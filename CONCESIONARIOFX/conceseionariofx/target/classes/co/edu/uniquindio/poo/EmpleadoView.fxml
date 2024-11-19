@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefWidth="947.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.EmpleadoViewController">
+  <!-- Título de la ventana -->
+  <!-- Cuerpo principal con pestañas -->
+  <!-- Barra de acciones en la parte inferior -->
+  <bottom>
+    <HBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #3A6EA5; -fx-padding: 10px;">
+       <children>
+         <Button fx:id="btnSalir" onAction="#regresarLogin" style="-fx-background-color: #F44336; -fx-text-fill: white;" text="Salir" />
+       </children>
+    </HBox>
+  </bottom>
+  <center>
+    <TabPane fx:id="tabPane">
+       <tabs>
+         <!-- Pestaña de Vehículos -->
+         <Tab closable="false" text="Vehículos">
+            <content>
+              <AnchorPane>
+                 <children>
+                   <VBox spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                      <children>
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Gestión de Vehículos" />
+                        <TableView fx:id="tblVehiculos" prefHeight="392.0" prefWidth="927.0">
+                          <columns>
+                            <TableColumn fx:id="clmCodigo" prefWidth="199.0" text="Código" />
+                            <TableColumn fx:id="clmMarca" prefWidth="176.0" text="Marca" />
+                            <TableColumn fx:id="clmModelo" minWidth="0.0" prefWidth="190.0" text="Modelo" />
+                            <TableColumn fx:id="clmEstado" maxWidth="5000.0" minWidth="10.0" prefWidth="185.0" text="Estado" />
+                            <TableColumn fx:id="clmTipoCaja" maxWidth="5000.0" minWidth="10.0" prefWidth="176.0" text="Tipo Caja" />
+                          </columns>
+                        </TableView>
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                             <Button fx:id="btnAgregarVehiculo" onAction="#agregarVehiculo" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Agregar Vehículo" />
+                             <Button fx:id="btnModificarVehiculo" onAction="#modificarVehiculo" style="-fx-background-color: #FFC107; -fx-text-fill: black;" text="Modificar Vehículo" />
+                             <Button fx:id="btnEliminarVehiculo" onAction="#eliminarVehiculo" style="-fx-background-color: #F44336; -fx-text-fill: white;" text="Eliminar Vehículo" />
+                           </children>
+                        </HBox>
+                      </children>
+                   </VBox>
+                 </children>
+              </AnchorPane>
+            </content>
+         </Tab>
+         <!-- Pestaña de Clientes -->
+         <Tab closable="false" text="Clientes">
+            <content>
+              <AnchorPane>
+                 <children>
+                   <VBox spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                      <children>
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Gestión de Clientes" />
+                        <TableView fx:id="tblClientes">
+                          <columns>
+                            <TableColumn fx:id="clmCedula" prefWidth="139.0" text="Cédula" />
+                            <TableColumn fx:id="clmNombre" maxWidth="5000.0" minWidth="10.0" prefWidth="158.0" text="Nombre" />
+                            <TableColumn fx:id="clmApellido" maxWidth="5000.0" minWidth="10.0" prefWidth="140.0" text="Apellido" />
+                            <TableColumn fx:id="clmTelefono" maxWidth="5000.0" minWidth="10.0" prefWidth="163.0" text="Teléfono" />
+                            <TableColumn fx:id="clmCorreo" maxWidth="5000.0" minWidth="10.0" prefWidth="168.0" text="Correo" />
+                            <TableColumn fx:id="clmDireccion" maxWidth="5000.0" minWidth="10.0" prefWidth="161.0" text="Dirección" />
+                          </columns>
+                        </TableView>
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                             <Button fx:id="btnRegistrarCliente" onAction="#registrarCliente" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Registrar Cliente" />
+                             <Button id="btnModificarVehiculo" fx:id="btnModificarCliente" onAction="#modificarCliente" style="-fx-background-color: #FFC107; -fx-text-fill: black;" text="Modificar Cliente" />
+                             <Button fx:id="btnEliminarCliente" onAction="#eliminarCliente" style="-fx-background-color: #F44336; -fx-text-fill: white;" text="Eliminar Cliente" />
+                           </children>
+                        </HBox>
+                      </children>
+                   </VBox>
+                 </children>
+              </AnchorPane>
+            </content>
+         </Tab>
+         <!-- Pestaña de Transacciones -->
+         <Tab closable="false" text="Transacciones">
+            <content>
+              <AnchorPane>
+                 <children>
+                   <VBox spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                      <children>
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Gestión de Transacciones" />
+                        <TableView fx:id="tblTransacciones">
+                          <columns>
+                            <TableColumn fx:id="clmCodigoT" maxWidth="5000.0" minWidth="10.0" prefWidth="115.0" text="Código" />
+                            <TableColumn fx:id="clmFecha" maxWidth="5000.0" minWidth="10.0" prefWidth="136.0" text="Fecha" />
+                            <TableColumn fx:id="clmPrecioTotal" maxWidth="5000.0" minWidth="10.0" prefWidth="228.0" text="Precio Total" />
+                                    <TableColumn fx:id="clmCodigoV" prefWidth="162.0" text="Código Vehiculo" />
+                                    <TableColumn fx:id="clmCedulaT" prefWidth="166.0" text="Cedula Cliente" />
+                                    <TableColumn fx:id="clmEstadoT" prefWidth="119.0" text="Estado" />
+                          </columns>
+                        </TableView>
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                             <Button fx:id="btnConsultarTransaccion" onAction="#consultarTransaccion" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Consultar Transacción" />
+                             <Button fx:id="btnCrearTransaccion" onAction="#terminarTransaccion" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Liquidar Transacción" />
+                             <Button id="btnModificarVehiculo" fx:id="btnModificarTransaccion" onAction="#eliminarTransaccion" style="-fx-background-color: #F44336; -fx-text-fill: white;" text="Eliminar Transacción" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                      </children>
+                   </VBox>
+                 </children>
+              </AnchorPane>
+            </content>
+         </Tab>
+       </tabs>
+    </TabPane>
+  </center>
+  <top>
+    <Label alignment="CENTER" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-background-color: #3A6EA5; -fx-text-fill: white; -fx-padding: 10px;" text="Gestión del Concesionario" />
+  </top>
+</BorderPane>

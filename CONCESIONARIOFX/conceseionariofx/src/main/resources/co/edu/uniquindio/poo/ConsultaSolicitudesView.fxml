@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Pos?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="623.0" prefWidth="822.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.ConsultaSolicitudesViewController">
+   <children>
+      <!-- Titulo -->
+      <Label layoutX="296.0" layoutY="41.0" style="-fx-font-size: 33px; -fx-font-family: 'Bauhaus 93'; -fx-text-fill: lightblue;" text="Solicitudes Hechas">
+      </Label>
+
+      <!-- Tabla -->
+      <TableView fx:id="tblSolicitudes" layoutX="163.0" layoutY="112.0" prefHeight="200.0" prefWidth="499.0" style="-fx-background-color: #f0f8ff;">
+        <columns>
+          <TableColumn fx:id="clmCodigo" prefWidth="186.0" text="Código" />
+          <TableColumn fx:id="clmFecha" minWidth="0.0" prefWidth="147.0" text="Fecha" />
+          <TableColumn fx:id="clmCodigoVendedor" minWidth="0.0" prefWidth="165.0" text="Código Vendedor" />
+        </columns>
+      </TableView>
+
+      <!-- Labels y RadioButtons -->
+      <Label layoutX="390.0" layoutY="337.0" style="-fx-font-size: 18; -fx-text-fill: #333333;" text="Oferta" />
+      
+      <RadioButton fx:id="radioCompra" layoutX="186.0" layoutY="398.0" mnemonicParsing="false" style="-fx-font-size: 14;" text="Compra" />
+      <RadioButton fx:id="radioVenta" layoutX="386.0" layoutY="398.0" mnemonicParsing="false" style="-fx-font-size: 14;" text="Venta" />
+      <RadioButton fx:id="radioAlquiler" layoutX="557.0" layoutY="398.0" mnemonicParsing="false" style="-fx-font-size: 14;" text="Alquiler" />
+
+      <Label layoutX="355.0" layoutY="447.0" style="-fx-font-size: 16; -fx-text-fill: #555555;" text="Valor de la oferta" />
+      
+      <!-- Campo de texto -->
+      <TextField fx:id="txtOferta" editable="false" layoutX="273.0" layoutY="483.0" prefHeight="31.0" prefWidth="302.0" promptText="Valor De La Oferta" style="-fx-border-radius: 5; -fx-background-color: #fafafa;" />
+
+      <!-- Botones -->
+      <Button fx:id="btnAceptar" layoutX="175.0" layoutY="560.0" mnemonicParsing="false" onAction="#aceptarOferta" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14; -fx-border-radius: 5;" text="Aceptar" />
+      <Button fx:id="btnCancelar" layoutX="354.0" layoutY="560.0" mnemonicParsing="false" onAction="#regresarCliente" style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-size: 14; -fx-border-radius: 5;" text="Cancelar" />
+      <Button fx:id="btnRechazar" layoutX="258.0" layoutY="560.0" mnemonicParsing="false" onAction="#rechazarOferta" style="-fx-background-color: #ff9400; -fx-text-fill: white; -fx-font-size: 14; -fx-border-radius: 5;" text="Rechazar" textFill="#ff9400" />
+      <Button fx:id="btnCargar" layoutX="447.0" layoutY="560.0" mnemonicParsing="false" onAction="#cargarDatos" style="-fx-background-color: #312ab8; -fx-text-fill: white; -fx-font-size: 14; -fx-border-radius: 5;" text="Cargar Solicitudes" textFill="#312ab8" />
+      <Button fx:id="btnCargarOferta" layoutX="594.0" layoutY="560.0" mnemonicParsing="false" onAction="#cargarDatosOferta" style="-fx-background-color: #b50aff; -fx-text-fill: white; -fx-font-size: 14; -fx-border-radius: 5;" text="Cargar Oferta" textFill="#b50aff" />
+
+   </children>
+</AnchorPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="564.0" style="-fx-background-color: linear-gradient(to bottom, #e0f7fa, #b2ebf2);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.ConsultaTransaccionViewController">
+   
+   <children>
+      <Label layoutX="183.0" layoutY="27.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #00796b;" text="Consulta Transacción" />
+      <Label layoutX="47.0" layoutY="138.0" style="-fx-font-size: 14px; -fx-text-fill: #004d40;" text="Nombre del Cliente">
+         
+      </Label>
+      <Label layoutX="47.0" layoutY="184.0" style="-fx-font-size: 14px; -fx-text-fill: #004d40;" text="Apellido del Cliente">
+         
+      </Label>
+      <Label layoutX="47.0" layoutY="233.0" style="-fx-font-size: 14px; -fx-text-fill: #004d40;" text="Cédula del Cliente">
+         
+            
+      </Label>
+
+    
+      <TextField fx:id="txtNombreCliente" editable="false" layoutX="209.0" layoutY="132.0" prefHeight="31.0" prefWidth="312.0" style="-fx-background-radius: 10;" />
+      <TextField fx:id="txtApellidoCliente" editable="false" layoutX="209.0" layoutY="178.0" prefHeight="31.0" prefWidth="312.0" style="-fx-background-radius: 10;" />
+      <TextField fx:id="txtCedulaCliente" editable="false" layoutX="209.0" layoutY="227.0" prefHeight="31.0" prefWidth="312.0" style="-fx-background-radius: 10;" />
+
+      <RadioButton fx:id="radioCompra" layoutX="143.0" layoutY="312.0" mnemonicParsing="false" style="-fx-text-fill: #00796b;" text="Compra" />
+      <RadioButton fx:id="radioVenta" layoutX="243.0" layoutY="312.0" mnemonicParsing="false" style="-fx-text-fill: #00796b;" text="Venta" />
+      <RadioButton fx:id="radioAlquiler" layoutX="335.0" layoutY="312.0" mnemonicParsing="false" style="-fx-text-fill: #00796b;" text="Alquiler" />
+
+      <Button fx:id="btnEnviarOferta" layoutX="143.0" layoutY="421.0" mnemonicParsing="false" onAction="#enviarOferta" style="-fx-background-color: #004d40; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 20;" text=" Enviar Oferta ">
+         
+      </Button>
+      <Label layoutX="191.0" layoutY="277.0" style="-fx-font-size: 14px; -fx-text-fill: #004d40;" text="Tipo de Transacción Ofertada">
+         <font>
+            <Font name="Bauhaus 93" size="57.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtOferta" layoutX="88.0" layoutY="365.0" prefHeight="31.0" prefWidth="393.0" promptText="Realice una oferta al Cliente" />
+      <Label layoutX="162.0" layoutY="97.0" style="-fx-font-size: 14px; -fx-text-fill: #004d40;" text="Datos del Cliente de la Oferta Realizada">
+         <font>
+            <Font name="Bauhaus 93" size="57.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnCargar" layoutX="295.0" layoutY="421.0" mnemonicParsing="false" onAction="#cargarDatos" style="-fx-background-color: #004d40; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 20;" text="Cargar Datos" />
+   </children>
+</AnchorPane>

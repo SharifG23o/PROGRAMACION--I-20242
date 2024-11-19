@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.DatosAlquilerViewController">
+   <children>
+      <!-- Fondo con bordes redondeados -->
+      <Pane layoutX="50" layoutY="30" prefHeight="340" prefWidth="600" style="-fx-background-color: linear-gradient(to bottom, #006400, #228B22); -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 4);">
+         <children>
+            <!-- Título Principal -->
+            <Label layoutX="162.0" layoutY="25.0" style="-fx-effect: dropshadow(gaussian, black, 8, 0.8, 0, 2);" text="Periodo de Alquiler" textFill="white">
+               <font>
+                  <Font name="Bauhaus 93" size="34.0" />
+               </font>
+            </Label>
+
+            <!-- Etiqueta Fecha Inicial -->
+            <Label layoutX="200.0" layoutY="90.0" style="-fx-font-size: 18px;" text="Fecha Inicial:" textFill="white">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font>
+            </Label>
+
+            <!-- Selector de Fecha Inicial -->
+            <DatePicker fx:id="datepckFechaInicial" layoutX="185.0" layoutY="117.0" style="-fx-background-color: white; -fx-border-color: #006400; -fx-border-radius: 10; -fx-padding: 5;" />
+
+            <!-- Etiqueta Fecha Final -->
+            <Label layoutX="200.0" layoutY="180.0" style="-fx-font-size: 18px;" text="Fecha Final:" textFill="white">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font>
+            </Label>
+
+            <!-- Selector de Fecha Final -->
+            <DatePicker fx:id="datepckFechaFinal" layoutX="185.0" layoutY="214.0" style="-fx-background-color: white; -fx-border-color: #006400; -fx-border-radius: 10; -fx-padding: 5;" />
+
+            <!-- Botón Aceptar -->
+            <Button fx:id="btnAceptar" layoutX="206.0" layoutY="271.0" mnemonicParsing="false" onAction="#guardarNegocioAlquiler" onMouseEntered="this.style='-fx-background-color: #006400; -fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 20; -fx-effect: dropshadow(gaussian, black, 10, 0.5, 0, 4);';" onMouseExited="this.style='-fx-background-color: white; -fx-text-fill: #006400; -fx-border-color: white; -fx-border-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 3);';" style="-fx-background-color: white; -fx-text-fill: #006400; -fx-font-size: 16px; -fx-cursor: hand; -fx-border-color: white; -fx-border-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 3);" text="Aceptar" />
+
+            <!-- Botón Salir -->
+            <Button fx:id="btnSalir" layoutX="307.0" layoutY="271.0" mnemonicParsing="false" onAction="#regresarCliente" onMouseEntered="this.style='-fx-background-color: #006400; -fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 20; -fx-effect: dropshadow(gaussian, black, 10, 0.5, 0, 4);';" onMouseExited="this.style='-fx-background-color: white; -fx-text-fill: #006400; -fx-border-color: white; -fx-border-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 3);';" style="-fx-background-color: white; -fx-text-fill: #006400; -fx-font-size: 16px; -fx-cursor: hand; -fx-border-color: white; -fx-border-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 3);" text="Salir" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

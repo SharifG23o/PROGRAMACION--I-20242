@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="2007.0" prefWidth="1117.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.VentaClienteViewController">
+   <left>
+    <ScrollPane prefHeight="2003.0" prefWidth="1117.0" style="-fx-background-color: #EAEAEA;" BorderPane.alignment="CENTER">
+       <content>
+         <VBox prefHeight="1949.0" prefWidth="1104.0" spacing="10.0" style="-fx-padding: 10;">
+            <children>
+              <!-- Vehículos Disponibles -->
+              <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill:  #66CC33;" text="Formulario para Vender Vehículo" />
+              <!-- Código del Vehículo -->
+              <Label fx:id="lblCodigo" text="Código:" />
+              <TextField fx:id="txtCodigo" prefHeight="32.0" prefWidth="1084.0" promptText="Ingrese el código" />
+              <!-- Marca del Vehículo -->
+              <Label fx:id="lblMarca" text="Marca:" />
+              <TextField fx:id="txtMarca" prefHeight="36.0" prefWidth="1084.0" promptText="Ingrese la marca" />
+              <!-- Modelo del Vehículo -->
+              <Label fx:id="lblModelo" text="Modelo:" />
+              <TextField fx:id="txtModelo" prefHeight="40.0" prefWidth="1084.0" promptText="Ingrese el modelo" />
+              <VBox fx:id="vboxTipoVehiculo" spacing="5.0" style="-fx-background-color:  #66CC33; -fx-border-radius: 10; -fx-padding: 10;">
+                 <children>
+                   <RadioButton fx:id="radioMoto" onAction="#seleccionarVehiculo" style="-fx-text-fill: #ECF0F1;" text="Moto" />
+                   <RadioButton fx:id="radioCamion" onAction="#seleccionarVehiculo" style="-fx-text-fill: #ECF0F1;" text="Camión" />
+                   <RadioButton fx:id="radioBus" onAction="#seleccionarVehiculo" style="-fx-text-fill: #ECF0F1;" text="Bus" />
+                   <RadioButton fx:id="radioVan" onAction="#seleccionarVehiculo" style="-fx-text-fill: #ECF0F1;" text="Van" />
+                   <RadioButton fx:id="radioPickUp" onAction="#seleccionarVehiculo" style="-fx-text-fill: #ECF0F1;" text="PickUp" />
+                   <RadioButton fx:id="radioDeportivo" onAction="#seleccionarVehiculo" style="-fx-text-fill: #ECF0F1;" text="Deportivo" />
+                   <RadioButton fx:id="radioCamioneta" onAction="#seleccionarVehiculo" style="-fx-text-fill: #ECF0F1;" text="Camioneta" />
+                   <RadioButton fx:id="radioSedan" onAction="#seleccionarVehiculo" style="-fx-text-fill: #ECF0F1;" text="Sedan" />
+                   <RadioButton fx:id="radioElectrico" onAction="#seleccionarVehiculo" style="-fx-text-fill: #ECF0F1;" text="Electrico" />
+                   <RadioButton fx:id="radioHibrido" onAction="#seleccionarVehiculo" style="-fx-text-fill: #ECF0F1;" text="Hibrido" />
+                 </children>
+              </VBox>
+              <!-- Información del Vehículo -->
+              <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill:  #66CC33;" text="Información del Vehículo" />
+              <GridPane fx:id="gridVehiculo" alignment="CENTER" hgap="10.0" minHeight="701.0" prefHeight="1272.0" prefWidth="1084.0" style="-fx-background-color: #F0F0F0; -fx-padding: 10; -fx-border-radius: 5; -fx-background-radius: 5;" vgap="10.0">
+                 <children>
+                   <!-- Nuevo (Sí/No) -->
+                   <Label fx:id="lblNuevo" text="Nuevo (Sí/No):" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                   <TextField fx:id="txtNuevo" editable="true" promptText="Sí/No" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                   <!-- Cambios -->
+                   <Label fx:id="lblCambios" text="Cambios:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                   <TextField fx:id="txtCambios" editable="true" prefHeight="20.0" prefWidth="238.0" promptText="Ingrese el número de cambios" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                   <!-- Velocidad Máxima (km/h) -->
+                   <Label fx:id="lblVelMax" text="Velocidad Máxima (km/h):" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                   <TextField fx:id="txtVelMax" editable="true" promptText="Ingrese la velocidad máxima" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                   <!-- Cilindraje (cc) -->
+                   <Label fx:id="lblCilindraje" text="Cilindraje (cc):" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                   <TextField fx:id="txtCilindraje" editable="true" promptText="Ingrese el cilindraje" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                   <!-- Defensas (Sí/No) -->
+                   <Label fx:id="lblDefensas" text="Defensas (Sí/No):" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                   <TextField fx:id="txtDefensas" editable="true" promptText="Sí/No" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                   <!-- Capacidad de Carga (kg) -->
+                   <Label fx:id="lblCapacidadCarga" text="Capacidad de Carga (kg):" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                   <TextField fx:id="txtCapacidadCarga" editable="true" promptText="Ingrese la capacidad de carga" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                   <!-- Aire Acondicionado (Sí/No) -->
+                   <Label fx:id="lblAireAcondicionado" text="Aire Acondicionado (Sí/No):" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                   <TextField fx:id="txtAireAcondicionado" editable="true" promptText="Sí/No" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                   <!-- ABS (Sí/No) -->
+                   <Label fx:id="lblAbs" text="ABS (Sí/No):" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+                   <TextField fx:id="txtAbs" editable="true" promptText="Sí/No" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                   <!-- Número de Ejes -->
+                   <Label fx:id="lblNumeroEjes" text="Número de Ejes:" GridPane.columnIndex="0" GridPane.rowIndex="11" />
+                   <TextField fx:id="txtNumeroEjes" editable="true" promptText="Ingrese el número de ejes" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                   <!-- Número de Pasajeros -->
+                   <Label fx:id="lblNumeroPasajeros" text="Número de Pasajeros:" GridPane.columnIndex="0" GridPane.rowIndex="12" />
+                   <TextField fx:id="txtNumeroPasajeros" editable="true" promptText="Ingrese el número de pasajeros" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                   <!-- Número de Puertas -->
+                   <Label fx:id="lblNumeroPuertas" text="Número de Puertas:" GridPane.columnIndex="0" GridPane.rowIndex="13" />
+                   <TextField fx:id="txtNumeroPuertas" editable="true" promptText="Ingrese el número de puertas" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                   <!-- Número de Bolsas de Aire -->
+                   <Label fx:id="lblBolsasAire" text="Número de Bolsas de Aire:" GridPane.columnIndex="0" GridPane.rowIndex="14" />
+                   <TextField fx:id="txtNumeroBolsasAire" editable="true" prefHeight="23.0" prefWidth="277.0" promptText="Ingrese el número de bolsas de aire" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                   <!-- Caballos de Fuerza -->
+                   <Label fx:id="lblCaballosFuerza" text="Caballos de Fuerza:" GridPane.columnIndex="0" GridPane.rowIndex="15" />
+                   <TextField fx:id="txtCaballosFuerza" editable="true" promptText="Ingrese los caballos de fuerza" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                   <!-- Tiempo de 0 a 100 -->
+                   <Label fx:id="lblTiempo" text="Tiempo 0-100 (segundos):" GridPane.columnIndex="0" GridPane.rowIndex="16" />
+                   <TextField fx:id="txtTiempo0100" editable="true" promptText="Ingrese el tiempo de 0 a 100" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                   <!-- Tracción (4x2/4x4) -->
+                   <Label fx:id="lblTraccion" text="Tracción (4x2/4x4):" GridPane.columnIndex="0" GridPane.rowIndex="17" />
+                   <TextField fx:id="txtTraccion" editable="true" promptText="4x2/4x4" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+                   <Label fx:id="lblAutonomia" text="Autonomía (km):" GridPane.columnIndex="0" GridPane.rowIndex="18" />
+                   <TextField fx:id="txtAutonomia" editable="true" promptText="Ingrese la autonomía" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+                   <Label fx:id="lblCarga" text="Tiempo de Carga (horas):" GridPane.columnIndex="0" GridPane.rowIndex="19" />
+                   <TextField fx:id="txtTiempoCarga" editable="true" promptText="Ingrese el tiempo de carga" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+                   <Label fx:id="lblEnchufable" text="Enchufable (Sí/No):" GridPane.columnIndex="0" GridPane.rowIndex="20" />
+                   <TextField fx:id="txtEnchufable" editable="true" promptText="Sí/No" GridPane.columnIndex="1" GridPane.rowIndex="20" />
+                   <Label fx:id="lblLigero" text="Ligero (Sí/No):" GridPane.columnIndex="0" GridPane.rowIndex="21" />
+                   <TextField fx:id="txtLigero" editable="true" promptText="Sí/No" GridPane.columnIndex="1" GridPane.rowIndex="21" />
+                   <Label fx:id="lblTipoCombustion" text="Tipo de Combustión (Gasolina, Diesel, Sin Combustión):" GridPane.columnIndex="0" GridPane.rowIndex="22" />
+                   <TextField fx:id="txtTipoCombustion" editable="true" promptText="Ingrese el tipo de combustión" GridPane.columnIndex="1" GridPane.rowIndex="22" />
+                   <Label fx:id="lblTipoTransmision" text="Tipo de Transmisión (Automático, Manual):" GridPane.columnIndex="0" GridPane.rowIndex="23" />
+                   <TextField fx:id="txtTipoTransmision" editable="true" promptText="Ingrese el tipo de transmisión" GridPane.columnIndex="1" GridPane.rowIndex="23" />
+                   <Label fx:id="lblCamaraReversa" text="Cámara Reversa (Sí/No):" GridPane.columnIndex="0" GridPane.rowIndex="24" />
+                   <TextField fx:id="txtCamaraReversa" editable="true" promptText="Sí/No" GridPane.columnIndex="1" GridPane.rowIndex="24" />
+                   <Label fx:id="lblCapacidadMaletero" prefWidth="212.9998779296875" text="Capacidad del Maletero (litros):" GridPane.columnIndex="0" GridPane.rowIndex="25" />
+                   <TextField fx:id="txtCapacidadMaletero" editable="true" promptText="Ingrese la capacidad del maletero" GridPane.columnIndex="1" GridPane.rowIndex="25" />
+                   <Label fx:id="lblSensorColision" text="Sensor de Colisión (Sí/No):" GridPane.columnIndex="0" GridPane.rowIndex="26" />
+                   <TextField fx:id="txtSensorColision" editable="true" promptText="Sí/No" GridPane.columnIndex="1" GridPane.rowIndex="26" />
+                   <Label fx:id="lblSensorTraficoCruzado" text="Sensor de Tráfico Cruzado (Sí/No):" GridPane.rowIndex="28" />
+                   <TextField fx:id="txtSensorTraficoCruzado" editable="true" prefHeight="13.0" prefWidth="277.0" promptText="Sí/No" GridPane.columnIndex="1" GridPane.rowIndex="28" />
+                   <Label fx:id="lblAsistentePermanenciaCarril" text="Asistente de Permanencia en Carril (Sí/No):" GridPane.rowIndex="29" />
+                   <TextField fx:id="txtAsistentePermanenciaCarril" editable="true" promptText="Sí/No" GridPane.columnIndex="1" GridPane.rowIndex="29" />
+                   <Label fx:id="lblNumeroSalidasEmergencia" text="Numero salidas de emergencia:" GridPane.columnIndex="0" GridPane.rowIndex="30" />
+                   <TextField fx:id="txtNumeroSalidasEmergencia" editable="true" promptText="Ingrese Numero salidas de emergencia" GridPane.columnIndex="1" GridPane.rowIndex="30" />
+                   <Label fx:id="lblEspejosElectricos" text="Espejos eléctricos (Sí/No):" GridPane.rowIndex="31" />
+                   <TextField fx:id="txtEspejosElectricos" editable="true" promptText="Sí/No" GridPane.columnIndex="1" GridPane.rowIndex="31" />
+                   <Label fx:id="lblVelocidadCrucero" text="Velocidad crucero (Sí/No):" GridPane.rowIndex="32" />
+                   <TextField fx:id="txtVelocidadCrucero" editable="true" promptText="Sí/No" GridPane.columnIndex="1" GridPane.rowIndex="32" />
+                   <Label fx:id="lblFrenosAire" text="Frenos de aire(Sí/No):" GridPane.rowIndex="33" />
+                   <TextField fx:id="txtFrenosAire" editable="true" promptText="Sí/No" GridPane.columnIndex="1" GridPane.rowIndex="33" />
+                   <Label fx:id="lblTipoCamion" text="Tipo de Camión (Ligero, Mediano ,Pesado):" GridPane.columnIndex="0" GridPane.rowIndex="34" />
+                   <TextField fx:id="txtTipoCamion" editable="true" promptText="Ingrese el tipo de camión" GridPane.columnIndex="1" GridPane.rowIndex="34" />
+                 </children>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints maxHeight="62.0" minHeight="37.0" prefHeight="62.0" />
+                        <RowConstraints maxHeight="25.0" minHeight="0.0" prefHeight="0.0" />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+              </GridPane>
+              <HBox alignment="CENTER" prefHeight="63.0" prefWidth="1084.0" spacing="10.0" style="-fx-padding: 10; -fx-background-color:  #66CC33;">
+                 <children>
+                   <Button id="btnGuardar" fx:id="btnVender" mnemonicParsing="false" onAction="#venderVehiculo" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Vender" />
+                   <Button id="btnListar" fx:id="btnSalir" mnemonicParsing="false" onAction="#regresarCliente" style="-fx-background-color: #ff2b2b; -fx-text-fill: white;" text="Salir" textFill="#ff2b2b" />
+                 </children>
+              </HBox>
+            </children>
+         </VBox>
+       </content>
+    </ScrollPane>
+   </left>
+   <bottom>
+      <ScrollPane prefHeight="0.0" prefWidth="1117.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

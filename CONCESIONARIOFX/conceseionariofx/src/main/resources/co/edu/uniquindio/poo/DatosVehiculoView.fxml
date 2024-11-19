@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane prefHeight="6483.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.DatosVehiculoViewController">
+   <children>
+     <ScrollPane fitToWidth="true" prefHeight="1372.0" prefWidth="600.0" style="-fx-background: #2C3E50;">
+        <content>
+          <VBox alignment="CENTER" spacing="15.0" style="-fx-background-color: #2C3E50; -fx-padding: 20;">
+             <children>
+               <Label style="-fx-font-size: 24px; -fx-text-fill: #ECF0F1; -fx-font-weight: bold;" text="Información de Vehículos" />
+               
+               <VBox spacing="10.0" style="-fx-background-color: #34495E; -fx-border-radius: 10; -fx-padding: 15;">
+                  <children>
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Código:" />
+                    <TextField fx:id="txtCodigo" promptText="Ingrese el código del vehículo" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Marca:" />
+                    <TextField fx:id="txtMarca" promptText="Ingrese la marca del vehículo" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Modelo:" />
+                    <TextField fx:id="txtModelo" promptText="Ingrese el modelo del vehículo" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Nuevo:" />
+                    <TextField fx:id="txtNuevo" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Cambios:" />
+                    <TextField fx:id="txtCambios" promptText="Ingrese el número de cambios" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Velocidad Máxima:" />
+                    <TextField fx:id="txtVelMax" promptText="Ingrese la velocidad máxima (km/h)" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Cilindraje:" />
+                    <TextField fx:id="txtCilindraje" promptText="Ingrese el cilindraje (cc)" />
+                  </children>
+               </VBox>
+          
+               <Label style="-fx-font-size: 18px; -fx-text-fill: #ECF0F1; -fx-font-weight: bold;" text="Seleccionar el Tipo de Vehículo" textAlignment="CENTER" />
+               <VBox fx:id="vboxTipoVehiculo" spacing="5.0" style="-fx-background-color: #34495E; -fx-border-radius: 10; -fx-padding: 10;">
+                  <children>
+                    <RadioButton fx:id="radioMoto" onAction="#determinarVehiculo" style="-fx-text-fill: #ECF0F1;" text="Moto" />
+                    <RadioButton fx:id="radioCamion" onAction="#determinarVehiculo" style="-fx-text-fill: #ECF0F1;" text="Camión" />
+                    <RadioButton fx:id="radioBus" onAction="#determinarVehiculo" style="-fx-text-fill: #ECF0F1;" text="Bus" />
+                    <RadioButton fx:id="radioVan" onAction="#determinarVehiculo" style="-fx-text-fill: #ECF0F1;" text="Van" />
+                    <RadioButton fx:id="radioPickUp" onAction="#determinarVehiculo" style="-fx-text-fill: #ECF0F1;" text="PickUp" />
+                    <RadioButton fx:id="radioDeportivo" onAction="#determinarVehiculo" style="-fx-text-fill: #ECF0F1;" text="Deportivo" />
+                    <RadioButton fx:id="radioCamioneta" onAction="#determinarVehiculo" style="-fx-text-fill: #ECF0F1;" text="Camioneta" />
+                    <RadioButton fx:id="radioSedan" onAction="#determinarVehiculo" style="-fx-text-fill: #ECF0F1;" text="Sedan" />
+                    <RadioButton fx:id="radioElectrico" onAction="#determinarVehiculo" style="-fx-text-fill: #ECF0F1;" text="Electrico" />
+                    <RadioButton fx:id="radioHibrido" onAction="#determinarVehiculo" style="-fx-text-fill: #ECF0F1;" text="Hibrido" />
+                  </children>
+               </VBox>
+
+
+
+               <VBox spacing="10.0" style="-fx-background-color: #34495E; -fx-border-radius: 10; -fx-padding: 10;">
+                 <children>
+                   <Label style="-fx-text-fill: #ECF0F1;" text="Tipo de Combustión:" />
+                   <VBox spacing="5.0">
+                     <children>
+                       <RadioButton fx:id="radioGasolina" onAction="#determinarCombustion" style="-fx-text-fill: #ECF0F1;" text="GASOLINA" toggleGroup="$null" />
+                       <RadioButton fx:id="radioDiesel" onAction="#determinarCombustion" style="-fx-text-fill: #ECF0F1;" text="DIESEL" toggleGroup="$null" />
+                       <RadioButton fx:id="radioSinCombustion" onAction="#determinarCombustion" style="-fx-text-fill: #ECF0F1;" text="SIN COMBUSTIÓN" toggleGroup="$null" />
+                     </children>
+                   </VBox>
+                   <Label style="-fx-text-fill: #ECF0F1;" text="Tipo de Transmisión:" />
+                   <VBox spacing="5.0">
+                     <children>
+                       <RadioButton fx:id="radioAutomatico" onAction="#determinarTransmision" style="-fx-text-fill: #ECF0F1;" text="AUTOMÁTICO" toggleGroup="$null" />
+                       <RadioButton fx:id="radioManual" onAction="#determinarTransmision" style="-fx-text-fill: #ECF0F1;" text="MANUAL" toggleGroup="$null" />
+                     </children>
+                   </VBox>
+                  </children>
+                </VBox>
+                
+
+
+
+
+               
+
+               
+
+
+
+               
+
+
+               
+
+
+
+               
+
+
+
+
+
+               
+              
+               <Label fx:id="labelMoto" style="-fx-font-size: 20px; -fx-text-fill: #ECF0F1; -fx-font-weight: bold;" text="Moto" />
+               <VBox spacing="10.0" style="-fx-background-color: #34495E; - fx-border-radius: 10; -fx-padding: 10;">
+                  <children>
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Defensas:" />
+                    <TextField fx:id="txtDefensas" promptText="Sí/No" />
+                  </children>
+               </VBox>
+              
+               <Label fx:id="labelCamion" style="-fx-font-size: 20px; -fx-text-fill: #ECF0F1; -fx-font-weight: bold;" text="Camión" />
+               <VBox prefHeight="485.0" prefWidth="541.0" spacing="10.0" style="-fx-background-color: #34495E; -fx-border-radius: 10; -fx-padding: 10;">
+                  <children>
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Capacidad de Carga:" />
+                    <TextField fx:id="txtCapacidadCargaCamion" promptText="Ingrese la capacidad de carga (kg)" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Aire Acondicionado:" />
+                    <TextField fx:id="txtAireAcondicionadoCamion" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Frenos de Aire:" />
+                    <TextField fx:id="txtFrenosAire" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="ABS:" />
+                    <TextField fx:id="txtAbsCamion" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Ejes:" />
+                    <TextField fx:id="txtNumeroEjes" promptText="Ingrese el número de ejes" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Categoría:" />
+                    
+                   <VBox spacing="5.0">
+                     <children>
+                       <RadioButton fx:id="radioLigero" onAction="#determinarCamion" style="-fx-text-fill: #ECF0F1;" text="LIGERO" toggleGroup="$null" />
+                       <RadioButton fx:id="radioMediano" onAction="#determinarCamion" style="-fx-text-fill: #ECF0F1;" text="MEDIANO" toggleGroup="$null" />
+                       <RadioButton fx:id="radioPesado" onAction="#determinarCamion" style="-fx-text-fill: #ECF0F1;" text="PESADO" toggleGroup="$null" />
+                     </children>
+                   </VBox>
+                    
+                  </children>
+               </VBox>
+               
+               <Label fx:id="labelBus" style="-fx-font-size: 20px; -fx-text-fill: #ECF0F1; -fx-font-weight: bold;" text="Bus" />
+               <VBox spacing="10.0" style="-fx-background-color: #34495E; -fx-border-radius: 10; -fx-padding: 10;">
+                  <children>
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Pasajeros:" />
+                    <TextField fx:id="txtNumeroPasajerosBus" promptText="Ingrese el número de pasajeros" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Puertas:" />
+                    <TextField fx:id="txtNumeroPuertasBus" promptText="Ingrese el número de puertas" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Bolsas de Aire:" />
+                    <TextField fx:id="txtNumeroBolsasAireBus" promptText="Ingrese el número de bolsas de aire" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Aire Acondicionado:" />
+                    <TextField fx:id="txtAireAcondicionadoBus" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="ABS:" />
+                    <TextField fx:id="txtAbsBus" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Velocidad Crucero:" />
+                    <TextField fx:id="txtVelocidadCruceroBus" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Capacidad del Maletero:" />
+                    <TextField fx:id="txtCapacidadMaleteroBus" promptText="Ingrese la capacidad (litros)" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Salidas de Emergencia:" />
+                    <TextField fx:id="txtNumeroSalidasEmergenciaBus" promptText="Ingrese el número de salidas" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Ejes:" />
+                    <TextField fx:id="txtNumeroEjesBus" promptText="Ingrese el número de ejes" />
+                  </children>
+               </VBox>
+               
+               <Label fx:id="labelVan" style="-fx-font-size: 20px; -fx-text-fill: #ECF0F1; -fx-font-weight: bold;" text="Van" />
+               <VBox spacing="10.0" style="-fx-background-color: #34495E; -fx-border-radius: 10; -fx-padding:  10;">
+                  <children>
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Pasajeros:" />
+                    <TextField fx:id="txtNumeroPasajerosVan" promptText="Ingrese el número de pasajeros" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Puertas:" />
+                    <TextField fx:id="txtNumeroPuertasVan" promptText="Ingrese el número de puertas" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Bolsas de Aire:" />
+                    <TextField fx:id="txtNumeroBolsasAireVan" promptText="Ingrese el número de bolsas de aire" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Aire Acondicionado:" />
+                    <TextField fx:id="txtAireAcondicionadoVan" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="ABS:" />
+                    <TextField fx:id="txtAbsVan" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Cámara de Reversa:" />
+                    <TextField fx:id="txtCamaraReversaVan" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Capacidad del Maletero:" />
+                    <TextField fx:id="txtCapacidadMaleteroVan" promptText="Ingrese la capacidad (litros)" />
+                  </children>
+               </VBox>
+              
+               <Label fx:id="labelPickUp" style="-fx-font-size: 20px; -fx-text-fill: #ECF0F1; -fx-font-weight: bold;" text="PickUp" />
+               <VBox spacing="10.0" style="-fx-background-color: #34495E; -fx-border-radius: 10; -fx-padding: 10;">
+                  <children>
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Pasajeros:" />
+                    <TextField fx:id="txtNumeroPasajerosPickUp" promptText="Ingrese el número de pasajeros" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Puertas:" />
+                    <TextField fx:id="txtNumeroPuertasPickUp" promptText="Ingrese el número de puertas" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Bolsas de Aire:" />
+                    <TextField fx:id="txtNumeroBolsasAirePickUp" promptText="Ingrese el número de bolsas de aire" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Aire Acondicionado:" />
+                    <TextField fx:id="txtAireAcondicionadoPickUp" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="ABS:" />
+                    <TextField fx:id="txtAbsPickUp" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Tracción:" />
+                    <TextField fx:id="txtTraccionPickUp" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Capacidad de Carga:" />
+                    <TextField fx:id="txtCapacidadCargaPickUp" promptText="Ingrese la capacidad de carga (kg)" />
+                  </children>
+               </VBox>
+             
+               <Label fx:id="labelDeportivo" style="-fx-font-size: 20px; -fx-text-fill: #ECF0F1; -fx-font-weight: bold;" text="Deportivo" />
+               <VBox spacing="10.0" style="-fx-background-color: #34495E; -fx-border-radius: 10; -fx-padding: 10;">
+                  <children>
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Pasajeros:" />
+                    <TextField fx:id="txtNumeroPasajerosDeportivo" promptText="Ingrese el número de pasajeros" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Puertas:" />
+                    <TextField fx:id="txtNumeroPuertasDeportivo" promptText="Ingrese el número de puertas" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Bolsas de Aire:" />
+                    <TextField fx:id="txtNumeroBolsasAireDeportivo" promptText="Ingrese el número de bolsas de aire" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Caballos de Fuerza:" />
+                    <TextField fx:id="txtCaballosFuerzaDeportivo" promptText="Ingrese los caballos de fuerza" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Tiempo 0-100:" />
+                    <TextField fx:id="txtTiempoCeroCienDeportivo" promptText="Ingrese el tiempo (segundos)" />
+                  </children>
+               </VBox>
+               
+               <Label fx:id="labelSedan" style="-fx-font-size: 20px; -fx-text-fill: #ECF0F1; -fx-font-weight: bold;" text="Sedan" />
+               <VBox spacing="10.0" style="-fx-background-color: #34495E; -fx-border-radius: 10; -fx-padding: 10;">
+                  <children>
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Pasajeros:" />
+                    <TextField fx:id="txtNumeroPasajerosSedan" promptText="Ingrese el número de pasajeros" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Puertas:" />
+                    <TextField fx:id="txtNumeroPuertasSedan" promptText="Ingrese el número de puertas" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Bolsas de Aire :" />
+                    <TextField fx:id="txtNumeroBolsasAireSedan" promptText="Ingrese el número de bolsas de aire" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Aire Acondicionado:" />
+                    <TextField fx:id="txtAireAcondicionadoSedan" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="ABS:" />
+                    <TextField fx:id="txtAbsSedan" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Velocidad Crucero:" />
+                    <TextField fx:id="txtVelocidadCruceroSedan" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Capacidad del Maletero:" />
+                    <TextField fx:id="txtCapacidadMaleteroSedan" promptText="Ingrese la capacidad (litros)" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Cámara de Reversa:" />
+                    <TextField fx:id="txtCamaraReversaSedan" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Sensor de Colisión:" />
+                    <TextField fx:id="txtSensorColisionSedan" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Sensor de Tráfico Cruzado:" />
+                    <TextField fx:id="txtSensorTraficoCruzadoSedan" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Asistente de Permanencia en el Carril:" />
+                    <TextField fx:id="txtAsistentePermanenciaCarrilSedan" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Espejos Eléctricos:" />
+                    <TextField fx:id="txtEspejosElectricosSedan" promptText="Sí/No" />
+                  </children>
+               </VBox>
+               
+               <Label fx:id="labelCamioneta" style="-fx-font-size: 20px; -fx-text-fill: #ECF0F1; -fx-font-weight: bold;" text="Camioneta" />
+               <VBox spacing="10.0" style="-fx-background-color: #34495E; -fx-border-radius: 10; -fx-padding: 10;">
+                  <children>
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Pasajeros:" />
+                    <TextField fx:id="txtNumeroPasajerosCamioneta" promptText="Ingrese el número de pasajeros" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Puertas:" />
+                    <TextField fx:id="txtNumeroPuertasCamioneta" promptText="Ingrese el número de puertas" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Número de Bolsas de Aire :" />
+                    <TextField fx:id="txtNumeroBolsasAireCamioneta" promptText="Ingrese el número de bolsas de aire" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Aire Acondicionado:" />
+                    <TextField fx:id="txtAireAcondicionadoCamioneta" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="ABS:" />
+                    <TextField fx:id="txtAbsCamioneta" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Velocidad Crucero:" />
+                    <TextField fx:id="txtVelocidadCruceroCamioneta" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Capacidad del Maletero:" />
+                    <TextField fx:id="txtCapacidadMaleteroCamioneta" promptText="Ingrese la capacidad (litros)" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Cámara de Reversa:" />
+                    <TextField fx:id="txtCamaraReversaCamioneta" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Sensor de Colisión:" />
+                    <TextField fx:id="txtSensorColisionCamioneta" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Sensor de Tráfico Cruzado:" />
+                    <TextField fx:id="txtSensorTraficoCruzadoCamioneta" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Asistente de Permanencia en el Carril:" />
+                    <TextField fx:id="txtAsistentePermanenciaCarrilCamioneta" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Tracción:" />
+                    <TextField fx:id="txtTraccionCamioneta" promptText="4x2/4x4" />
+                  </children>
+               </VBox>
+              
+               <Label fx:id="labelElectrico" style="-fx-font-size: 20px; -fx-text-fill: #ECF0F1; -fx-font-weight: bold;" text="Vehículo Eléctrico" />
+               <VBox spacing="10.0" style="-fx-background-color: #34495E; -fx-border-radius: 10; -fx-padding: 10;">
+                  <children>
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Autonomía:" />
+                    <TextField fx:id="txtAutonomiaElectrico" promptText="Ingrese la autonomía (km)" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Tiempo de Carga:" />
+                    <TextField fx:id="txtTiempoCargaElectrico" promptText="Ingrese el tiempo de carga (horas)" />
+                  </children>
+               </VBox>
+               
+               <Label fx:id="labelHibrido" style="-fx-font-size: 20px; -fx-text-fill: #ECF0F1; -fx-font-weight: bold;" text="Vehículo Híbrido" />
+               <VBox spacing="10.0" style="-fx-background-color: #34495E; -fx-border-radius: 10; -fx-padding: 10;">
+                  <children>
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Enchufable:" />
+                    <TextField fx:id="txtEnchufableHibrido" promptText="Sí/No" />
+                    <Label style="-fx-text-fill: #ECF0F1;" text="Ligero:" />
+                    <TextField fx:id="txtLigeroHibrido" promptText="Sí/No" />
+                  </children>
+               </VBox>
+               <VBox spacing="10.0" style="-fx-background-color: #34495E; -fx-border-radius: 10; -fx-padding: 10;">
+                 <children>
+                   
+                   
+                   
+                   <HBox spacing="10.0">
+                      <children>
+                        <Button fx:id="btnGuardar" onAction="#btnGuardarAction" style="-fx-background-color: #27AE60; -fx-text-fill: white;" text="Guardar" />
+                        <Button fx:id="btnCargarDatos" onAction="#btnCargarDatos" style="-fx-background-color: #2980B9; -fx-text-fill: white;" text="Cargar Datos" />
+                        
+                        <Button fx:id="btnLimpiar" onAction="#btnLimpiarAction" style="-fx-background-color: #8E44AD; -fx-text-fill: white;" text="Limpiar" />
+                        <Button fx:id="btnSalir" onAction="#btnSalirAction" style="-fx-background-color: #7F8C8D; -fx-text-fill: white;" text="Salir" />
+                      </children>
+                   </HBox>
+                 </children>
+               </VBox>
+             </children>
+          </VBox>
+        </content>
+     </ScrollPane>
+   </children>
+</StackPane>

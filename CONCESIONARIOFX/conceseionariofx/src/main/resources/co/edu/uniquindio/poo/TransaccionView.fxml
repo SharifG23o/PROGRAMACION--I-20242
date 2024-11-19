@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="694.0" prefWidth="881.0" style="-fx-background-color: #f0f4f8;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.TransaccionViewController">
+   <children>
+      <!-- Title Label -->
+      <Label alignment="CENTER" layoutX="236.0" prefHeight="66.0" prefWidth="411.0" style="-fx-text-fill: #2a2e37;" text="Datos Extra de Transacción">
+         <font>
+            <Font name="Arial Bold" size="30.0" />
+         </font>
+      </Label>
+      
+      <!-- Labels and Input Fields -->
+      <Label layoutX="151.0" layoutY="101.0" style="-fx-font-size: 16; -fx-text-fill: #2a2e37;" text="Código de Transacción" />
+      <TextField fx:id="txtCodigoTransaccion" layoutX="347.0" layoutY="96.0" prefHeight="33.0" prefWidth="252.0" promptText="Ingrese el código de transacción" style="-fx-background-color: #ffffff; -fx-border-color: #d1d5db; -fx-border-radius: 5;" />
+
+      <Label layoutX="144.0" layoutY="158.0" style="-fx-font-size: 16; -fx-text-fill: #2a2e37;" text="Impuesto de Transacción" />
+      <TextField fx:id="txtImpuestoTransaccion" layoutX="347.0" layoutY="153.0" prefHeight="33.0" prefWidth="252.0" promptText="Ingrese el impuesto de transacción" style="-fx-background-color: #ffffff; -fx-border-color: #d1d5db; -fx-border-radius: 5;" />
+
+      <!-- Separator -->
+      <Separator layoutY="210.0" prefHeight="2.0" prefWidth="881.0" style="-fx-background-color: #94a3b8;" />
+
+      <!-- Sections for Compra, Venta, Alquiler -->
+      <Label alignment="CENTER" layoutX="35.0" layoutY="259.0" prefHeight="66.0" prefWidth="293.0" style="-fx-font-size: 20; -fx-text-fill: #2563eb;" text="Compra">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
+         </font>
+      </Label>
+
+      <Label alignment="CENTER" layoutX="314.0" layoutY="259.0" prefHeight="66.0" prefWidth="293.0" style="-fx-font-size: 20; -fx-text-fill: #10b981;" text="Venta">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
+         </font>
+      </Label>
+
+      <Label alignment="CENTER" layoutX="566.0" layoutY="259.0" prefHeight="66.0" prefWidth="293.0" style="-fx-font-size: 20; -fx-text-fill: #f59e0b;" text="Alquiler">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
+         </font>
+      </Label>
+
+      <!-- Purchase Section -->
+      <Label layoutX="126.0" layoutY="343.0" style="-fx-font-size: 14; -fx-text-fill: #334155;" text="Precio de Compra" />
+      <TextField fx:id="txtPrecioCompra" editable="false" layoutX="62.0" layoutY="389.0" prefHeight="33.0" prefWidth="245.0" promptText="Precio de Compra" style="-fx-background-color: #ffffff; -fx-border-color: #d1d5db; -fx-border-radius: 5;" />
+
+      <Label layoutX="133.0" layoutY="442.0" style="-fx-font-size: 14; -fx-text-fill: #334155;" text="Revisión (Sí/No)" />
+      <TextField fx:id="txtRevision" editable="false" layoutX="62.0" layoutY="479.0" prefHeight="33.0" prefWidth="245.0" promptText="Cuenta con revisión (Si/No)" style="-fx-background-color: #ffffff; -fx-border-color: #d1d5db; -fx-border-radius: 5;" />
+
+      <!-- Sale Section -->
+      <Label layoutX="402.0" layoutY="343.0" style="-fx-font-size: 14; -fx-text-fill: #334155;" text="Precio de Venta" />
+      <TextField fx:id="txtPrecioVenta" editable="false" layoutX="328.0" layoutY="389.0" prefHeight="33.0" prefWidth="245.0" promptText="Precio de Venta" style="-fx-background-color: #ffffff; -fx-border-color: #d1d5db; -fx-border-radius: 5;" />
+
+      <!-- Rent Section -->
+      <Label layoutX="658.0" layoutY="343.0" style="-fx-font-size: 14; -fx-text-fill: #334155;" text="Precio de Alquiler" />
+      <TextField editable="false" layoutX="594.0" layoutY="389.0" prefHeight="33.0" prefWidth="245.0" promptText="Precio de Alquiler" style="-fx-background-color: #ffffff; -fx-border-color: #d1d5db; -fx-border-radius: 5;" />
+
+      <Label layoutX="688.0" layoutY="442.0" style="-fx-font-size: 14; -fx-text-fill: #334155;" text="Fecha de Inicio" />
+      <DatePicker fx:id="dtpckFechaInicio" editable="false" layoutX="599.0" layoutY="479.0" prefHeight="33.0" prefWidth="245.0" promptText="Fecha inicio" style="-fx-background-color: #ffffff; -fx-border-color: #d1d5db; -fx-border-radius: 5;" />
+
+      <Label layoutX="690.0" layoutY="530.0" style="-fx-font-size: 14; -fx-text-fill: #334155;" text="Fecha de Fin" />
+      <DatePicker fx:id="dtpckFechaFin" editable="false" layoutX="599.0" layoutY="564.0" prefHeight="33.0" prefWidth="245.0" promptText="fecha fin" style="-fx-background-color: #ffffff; -fx-border-color: #d1d5db; -fx-border-radius: 5;" />
+
+      <!-- Buttons -->
+      <Button fx:id="btnGuardar" layoutX="308.0" layoutY="632.0" mnemonicParsing="false" onAction="#guardarTransaccion" style="-fx-background-color: #3b82f6; -fx-text-fill: #ffffff; -fx-font-size: 16; -fx-border-radius: 5;" text="Guardar" />
+      <Button fx:id="btnSalir" layoutX="493.0" layoutY="632.0" mnemonicParsing="false" onAction="#btnSalirAction" style="-fx-background-color: #ef4444; -fx-text-fill: #ffffff; -fx-font-size: 16; -fx-border-radius: 5;" text="Salir" />
+      <Button fx:id="btnCargar" layoutX="407.0" layoutY="632.0" mnemonicParsing="false" onAction="#cargarDatos" style="-fx-background-color: #ffd530; -fx-text-fill: #ffffff; -fx-font-size: 16; -fx-border-radius: 5;" text="Cargar" textFill="#ffd530" />
+   </children>
+</AnchorPane>
